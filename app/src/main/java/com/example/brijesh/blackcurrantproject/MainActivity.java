@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
                         ListPozo lp=new ListPozo();
                         lp.setImage(image);
                         lp.setTitle(name);
+                        lp.setId(id);
                       //  lp.setInformation(desc);
                         list.add(lp);
                         System.out.println("jsondata..."+id+ name+ image);

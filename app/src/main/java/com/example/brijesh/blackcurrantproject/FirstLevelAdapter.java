@@ -51,12 +51,12 @@ public class FirstLevelAdapter extends RecyclerView.Adapter<FirstLevelAdapter.My
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.firstlevelcard, parent, false);
-        MyViewHolder holder=new MyViewHolder(itemView);
-       /* holder.itemView.setOnClickListener(new View.OnClickListener() {
+       /* final MyViewHolder holder=new MyViewHolder(itemView);
+       holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i=new Intent(FirstLevelAdapter.this,SecondLevel.class);
-                startActivity(i);
+                Intent i=new Intent(context,SecondLevel.class);
+                context.startActivity(i);
             }
         });*/
 
@@ -67,11 +67,21 @@ public class FirstLevelAdapter extends RecyclerView.Adapter<FirstLevelAdapter.My
     public void onBindViewHolder(MyViewHolder holder, int position) {
         ListPozo l = list.get(position);
         Uri uri=Uri.parse(l.getImage());
-       context=holder.pics.getContext();
-       // holder.pics.setImageResource(Integer.parseInt(l.getImage()));
+        context=holder.pics.getContext();
+        // holder.pics.setImageResource(Integer.parseInt(l.getImage()));
         Picasso.with(context).load(uri).fit().into(holder.pics);
         holder.title.setText(l.getTitle().toString());
-       // holder.information.setText(l.getInformation());
+        // holder.information.setText(l.getInformation());
+        final String title1=l.getId();
+        holder.pics.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(context,SecondLevel.class);
+                i.putExtra("id",title1);
+                context.startActivity(i);
+
+            }
+        });
 
     }
 
