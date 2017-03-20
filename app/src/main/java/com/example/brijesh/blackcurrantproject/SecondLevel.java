@@ -64,16 +64,16 @@ public class SecondLevel extends AppCompatActivity {
                         String id=c.getString("id");
                         String name=c.getString("name");
                         String image=c.getString("backdropUrl");
-                        // String desc=c.getString("description");
+
                         ListPozo lp=new ListPozo();
                         lp.setImage(image);
                         lp.setTitle(name);
                         lp.setId(id);
-                        //  lp.setInformation(desc);
+
                         list.add(lp);
                         System.out.println("jsondata..."+id+ name+ image);
                     }
-                    //firstLevelAdapter.
+
                     firstLevelAdapter=new FirstLevelAdapter(SecondLevel.this,list);
                     recyclerView.setAdapter(firstLevelAdapter);
                     firstLevelAdapter.notifyDataSetChanged();

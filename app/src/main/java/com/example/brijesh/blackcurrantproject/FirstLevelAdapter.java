@@ -25,7 +25,7 @@ public class FirstLevelAdapter extends RecyclerView.Adapter<FirstLevelAdapter.My
     private Context context;
     private Activity activity;
     private LayoutInflater inflator;
-
+    public Picasso picasso;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
@@ -45,6 +45,7 @@ public class FirstLevelAdapter extends RecyclerView.Adapter<FirstLevelAdapter.My
         this.activity=context;
         inflator=LayoutInflater.from(context);
         this.list = list;
+        picasso=Picasso.with(context);
     }
 
     @Override
@@ -66,10 +67,10 @@ public class FirstLevelAdapter extends RecyclerView.Adapter<FirstLevelAdapter.My
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         ListPozo l = list.get(position);
-        Uri uri=Uri.parse(l.getImage());
+       // Uri uri=Uri.parse(l.getImage());
         context=holder.pics.getContext();
         // holder.pics.setImageResource(Integer.parseInt(l.getImage()));
-        Picasso.with(context).load(uri).fit().into(holder.pics);
+        picasso.load(l.getImage()).fit().into(holder.pics);
         holder.title.setText(l.getTitle().toString());
         // holder.information.setText(l.getInformation());
         final String title1=l.getId();

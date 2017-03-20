@@ -5,7 +5,7 @@ package com.example.brijesh.blackcurrantproject;
  */
 
 public class ListPozo {
-    String image,title,information,id;
+    String image,title,id;
 
     public ListPozo()
     {
@@ -17,7 +17,7 @@ public class ListPozo {
         this.image=image;
         this.title=title;
         this.id=id;
-       // this.information=information;
+
     }
 
     public String getId() {
@@ -44,11 +44,5 @@ public class ListPozo {
         this.title = title;
     }
 
-    public String getInformation() {
-        return information;
-    }
 
-    public void setInformation(String information) {
-        this.information = information;
-    }
 }
