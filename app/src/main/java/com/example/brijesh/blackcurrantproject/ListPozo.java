@@ -5,19 +5,28 @@ package com.example.brijesh.blackcurrantproject;
  */
 
 public class ListPozo {
-    String image,title,id;
+    String image,title,id,description;
 
     public ListPozo()
     {
 
     }
 
-    public ListPozo(String image,String title,String id)
+    public ListPozo(String image,String title,String id,String description)
     {
         this.image=image;
         this.title=title;
         this.id=id;
+        this.description=description;
 
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getId() {

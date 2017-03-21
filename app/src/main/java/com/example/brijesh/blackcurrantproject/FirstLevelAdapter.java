@@ -29,13 +29,14 @@ public class FirstLevelAdapter extends RecyclerView.Adapter<FirstLevelAdapter.My
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView title,information;
+        public TextView title,information,id;
         public ImageView pics;
         public MyViewHolder(View view) {
             super(view);
             pics=(ImageView) view.findViewById(R.id.image1);
             title = (TextView) view.findViewById(R.id.name);
-            information = (TextView) view.findViewById(R.id.info);
+           // information = (TextView) view.findViewById(R.id.description);
+            id = (TextView) view.findViewById(R.id.others);
 
         }
     }
@@ -72,6 +73,8 @@ public class FirstLevelAdapter extends RecyclerView.Adapter<FirstLevelAdapter.My
         // holder.pics.setImageResource(Integer.parseInt(l.getImage()));
         picasso.load(l.getImage()).fit().into(holder.pics);
         holder.title.setText(l.getTitle().toString());
+        holder.id.setText(l.getId().toString());
+      //  holder.information.setText(l.getDescription().toString());
         // holder.information.setText(l.getInformation());
         final String title1=l.getId();
         holder.pics.setOnClickListener(new View.OnClickListener() {

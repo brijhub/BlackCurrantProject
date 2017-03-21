@@ -63,12 +63,13 @@ public class SecondLevel extends AppCompatActivity {
                         JSONObject c=items.getJSONObject(i);
                         String id=c.getString("id");
                         String name=c.getString("name");
+                     //   String hashtag=c.getString("hashtag");
                         String image=c.getString("backdropUrl");
-
                         ListPozo lp=new ListPozo();
                         lp.setImage(image);
                         lp.setTitle(name);
                         lp.setId(id);
+                      //  lp.setDescription(hashtag);
 
                         list.add(lp);
                         System.out.println("jsondata..."+id+ name+ image);
