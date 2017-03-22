@@ -8,7 +8,8 @@
     android:paddingBottom="5dp"
     app:cardCornerRadius="5dp"
     android:id="@+id/rel"
-    android:layout_marginBottom="8dp">
+    android:layout_marginBottom="8dp"
+    android:background="#ECEFF1">
 
 <RelativeLayout
     android:layout_width="match_parent"
@@ -48,9 +49,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/others"
-        android:text="Click to see the details"
+        android:text="details"
         android:padding="5dp"
         android:id="@+id/description"
+        android:layout_alignParentEnd="true"
         />
 
 </RelativeLayout>
