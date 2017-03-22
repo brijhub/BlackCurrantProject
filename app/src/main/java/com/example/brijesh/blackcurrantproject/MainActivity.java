@@ -34,10 +34,25 @@ FragmentManager fragmentManager;
         Fragment fm=new FirstFragment();
         fragmentManager=getSupportFragmentManager();
         FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.frameLayout,fm);
+        fragmentTransaction.replace(R.id.frameLayout,fm,"Fragment_One");
         fragmentTransaction.commit();
 
     }
 
+    @Override
+    public void onBackPressed() {
+        SecondFragment myFragment1 = (SecondFragment) getSupportFragmentManager().findFragmentByTag("Fragment_Two");
+        if (myFragment1 != null && myFragment1.isVisible()) {
 
+            Fragment fm=new FirstFragment();
+            fragmentManager=getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.frameLayout,fm,"Fragment_One");
+            fragmentTransaction.commit();
+        }
+       else {
+          finish();
+        }
+
+    }
 }

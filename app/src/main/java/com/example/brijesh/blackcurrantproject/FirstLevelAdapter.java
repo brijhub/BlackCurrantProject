@@ -39,7 +39,7 @@ public class FirstLevelAdapter extends RecyclerView.Adapter<FirstLevelAdapter.My
         args.putString(SecondFragment.DATA_RECEIVE, data);
         fragmentB.setArguments(args);
         firstFragment.getFragmentManager().beginTransaction()
-                .replace(R.id.frameLayout, fragmentB)
+                .replace(R.id.frameLayout, fragmentB,"Fragment_Two")
                 .commit();
     }
 
